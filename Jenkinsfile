@@ -12,7 +12,7 @@ pipeline {
             echo 'This will always run'
         }
         success {
-            archiveArtifacts artifacts: 'target/*', excludes: 'Jenkinsfile', onlyIfSuccessful: true
+            archiveArtifacts artifacts: '*', excludes: 'Jenkinsfile', onlyIfSuccessful: true
             echo 'This will run only if successful'
         }
         failure {
