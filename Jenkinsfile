@@ -13,6 +13,7 @@ pipeline {
         }
         success {
             archiveArtifacts artifacts: '*', excludes: 'Jenkinsfile', onlyIfSuccessful: true
+            sh 'tar -cpf archive.tar *'
             echo 'This will run only if successful'
         }
         failure {
